@@ -1,0 +1,303 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff7ec;
+}
+
+.app {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  color: #ff7a00;
+  font-size: 42px;
+  margin-bottom: 5px;
+}
+
+.app > p {
+  text-align: center;
+  color: #5f5f5f;
+  font-size: 18px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 25px;
+  align-items: start;
+}
+
+.card,
+.preview {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  color: #5a3d2b;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+button {
+  border: 2px solid #d6d6d6;
+  background: white;
+  border-radius: 14px;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #444;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  border-color: #ff7a00;
+  transform: translateY(-2px);
+}
+
+button strong {
+  color: #333;
+}
+
+button span {
+  display: block;
+  margin-top: 8px;
+  color: #666;
+}
+
+.selected {
+  background: #ffeddc !important;
+  border: 2px solid #ff7a00 !important;
+  color: #ff7a00 !important;
+  transform: scale(1.03);
+}
+
+.preview {
+  position: sticky;
+  top: 20px;
+  text-align: center;
+}
+
+.preview h2 {
+  color: #5a3d2b;
+}
+
+.trol {
+  position: relative;
+  width: 240px;
+  height: 340px;
+  margin: 20px auto;
+}
+
+.vaso {
+  position: absolute;
+  bottom: 0;
+  left: 35px;
+  width: 170px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 5px solid #b8d8e8;
+  border-radius: 20px 20px 45px 45px;
+  overflow: hidden;
+}
+
+.hielo {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 85%;
+  border-radius: 20px 20px 40px 40px;
+  transition: background 0.3s ease;
+}
+
+.hielo::before,
+.hielo::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.45);
+  width: 45px;
+  height: 35px;
+  border-radius: 8px;
+}
+
+.hielo::before {
+  top: 45px;
+  left: 25px;
+  transform: rotate(15deg);
+}
+
+.hielo::after {
+  top: 95px;
+  right: 30px;
+  transform: rotate(-12deg);
+}
+
+.popote {
+  position: absolute;
+  top: 0;
+  right: 65px;
+  width: 18px;
+  height: 160px;
+  background: #ff4d6d;
+  border-radius: 10px;
+  transform: rotate(18deg);
+}
+
+.topping {
+  position: absolute;
+  font-size: 28px;
+  z-index: 3;
+}
+
+.topping-0 {
+  top: 35px;
+  left: 40px;
+}
+
+.topping-1 {
+  top: 85px;
+  right: 35px;
+}
+
+.topping-2 {
+  top: 135px;
+  left: 70px;
+}
+
+.topping-3 {
+  top: 165px;
+  right: 70px;
+}
+
+.resumen {
+  background: #fff3e0;
+  padding: 15px;
+  border-radius: 14px;
+  text-align: left;
+}
+
+.resumen p {
+  color: #444;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.resumen strong {
+  color: #333;
+}
+
+.resumen h3 {
+  color: #ff7a00;
+  font-size: 34px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-confirmar {
+  width: 100%;
+  background: #ff7a00;
+  color: white;
+  border: none;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.btn-confirmar:hover {
+  background: #e96f00;
+}
+
+.btn-confirmar:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.mensaje {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.input-nombre {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #d0d0d0;
+  border-radius: 12px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background: white;
+  color: #222;
+}
+
+.input-nombre::placeholder {
+  color: #777;
+}
+
+.pedido {
+  background: #fff3e0;
+  padding: 14px;
+  margin-top: 14px;
+  border-radius: 12px;
+}
+
+.pedido p {
+  color: #444;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.nav button {
+  background: #ff7a00;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 14px 22px;
+}
+
+.nav button:hover {
+  background: #e96f00;
+}
+
+.historial-page {
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+@media (max-width: 850px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .preview {
+    position: static;
+  }
+
+  .trol {
+    width: 200px;
+    height: 300px;
+  }
+
+  .vaso {
+    left: 25px;
+  }
+}
