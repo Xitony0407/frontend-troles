@@ -2,32 +2,37 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #fff7ec;
+  /* Eliminar cualquier borde o margen en el body */
+  border: 0;
+  padding: 0;
+}
+
+#root {
+  /* Asegurar que el contenedor principal tampoco tenga bordes */
+  border: 0;
 }
 
 .app {
   max-width: 1200px;
   margin: auto;
   padding: 30px;
+  /* Asegurar sin borde */
+  border: 0;
 }
 
 h1 {
   text-align: center;
   color: #ff7a00;
   font-size: 42px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .app > p {
   text-align: center;
   color: #5f5f5f;
   font-size: 18px;
-}
-
-.layout {
-  display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 25px;
-  align-items: start;
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 
 .card,
@@ -37,6 +42,8 @@ h1 {
   margin-top: 20px;
   border-radius: 18px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  /* Asegurar sin borde */
+  border: 0;
 }
 
 .card h2 {
@@ -284,9 +291,18 @@ button span {
 }
 
 @media (max-width: 850px) {
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Forzar 2 columnas explícitas */
+  gap: 25px;
+  align-items: start;
+}
+
+@media (max-width: 850px) {
   .layout {
     grid-template-columns: 1fr;
   }
+}
 
   .preview {
     position: static;
