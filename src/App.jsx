@@ -4,8 +4,8 @@ import Login from "./Login";
 import Register from "./Register";
 import AdminDashboard from "./AdminDashboard";
 
-//const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"; 
-const API_URL = "http://localhost:3000";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"; 
+//const API_URL = "http://localhost:3000";
 
 //"http://localhost:3000";
 
