@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API_URL = "https://api-troles.onrender.com" || "http://localhost:3000";
 //const API_URL = "http://localhost:3000";
 
 function Register({ onRegister, onNavigateToLogin }) {
