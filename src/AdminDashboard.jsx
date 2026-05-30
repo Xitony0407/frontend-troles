@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-const API_URL = "https://api-troles.onrender.com" || "http://localhost:3000";
+const API_URL = "https://api-troles.onrender.com"; 
 //const API_URL = "http://localhost:3000";
 
 function AdminDashboard({ token }) {
   const [ordenes, setOrdenes] = useState([]);
   const [logs, setLogs] = useState([]);
+  const [estados, setEstados] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -14,12 +15,14 @@ function AdminDashboard({ token }) {
 
   const fetchData = async () => {
     const headers = { Authorization: `Bearer ${token}` };
-    const [resOrdenes, resLogs] = await Promise.all([
+    const [resOrdenes, resLogs, resEstados] = await Promise.all([
       fetch(`${API_URL}/ordenes`, { headers }),
-      fetch(`${API_URL}/logs`, { headers })
+      fetch(`${API_URL}/logs`, { headers }),
+      fetch(`${API_URL}/estados-orden`, { headers })
     ]);
     setOrdenes(await resOrdenes.json());
     setLogs(await resLogs.json());
+    setEstados(await resEstados.json());
   };
 
   const cambiarEstado = async (id_orden, id_estado) => {
@@ -54,10 +57,9 @@ function AdminDashboard({ token }) {
                   <td>{orden.estado?.descripcion}</td>
                   <td>
                     <select onChange={(e) => cambiarEstado(orden.id_orden, e.target.value)} defaultValue={orden.estado?.id_estado}>
-                      <option value="1">Pendiente</option>
-                      <option value="2">En Proceso</option>
-                      <option value="3">Listo</option>
-                      <option value="4">Entregado</option>
+                      {estados.map(estado => (
+                        <option key={estado.id_estado} value={estado.id_estado}>{estado.descripcion}</option>
+                      ))}
                     </select>
                   </td>
                 </tr>
